@@ -1,0 +1,21 @@
+---
+const logos = [
+  { name: 'QRIS', url: 'https://via.placeholder.com/100x40?text=QRIS' },
+  { name: 'GoPay', url: 'https://via.placeholder.com/100x40?text=GoPay' },
+  { name: 'OVO', url: 'https://via.placeholder.com/100x40?text=OVO' },
+  { name: 'ShopeePay', url: 'https://via.placeholder.com/100x40?text=ShopeePay' },
+  { name: 'BCA', url: 'https://via.placeholder.com/100x40?text=BCA' },
+  { name: 'Mandiri', url: 'https://via.placeholder.com/100x40?text=Mandiri' }
+];
+---
+
+<div class="bg-white border-y border-gray-100 py-10">
+  <div class="max-w-7xl mx-auto px-4">
+    <p class="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest mb-8">Metode Pembayaran Aman & Terpercaya</p>
+    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all">
+      {logos.map(logo => (
+        <img src={logo.url} alt={logo.name} class="h-6 md:h-8 object-contain" loading="lazy" />
+      ))}
+    </div>
+  </div>
+</div>

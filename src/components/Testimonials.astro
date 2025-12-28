@@ -1,0 +1,68 @@
+---
+import { Star } from 'lucide-react';
+
+const testimonials = [
+  {
+    name: "Budi Santoso",
+    city: "Jakarta",
+    text: "Pusing lihat Coretax baru, untung ada layanan ini. Murah banget beneran seharga kopi!"
+  },
+  {
+    name: "Siska Amelia",
+    city: "Surabaya",
+    text: "Prosesnya super cepat. Tinggal kirim dokumen lewat WA, 15 menit kemudian BPE sudah saya terima."
+  },
+  {
+    name: "Rizky Pratama",
+    city: "Bandung",
+    text: "Awalnya ragu karena harganya murah, tapi ternyata layanannya sangat profesional. Recommended!"
+  },
+  {
+    name: "Andi Wijaya",
+    city: "Medan",
+    text: "Sangat membantu buat yang gak punya banyak waktu ngurus pajak sendiri."
+  },
+  {
+    name: "Maya Sari",
+    city: "Semarang",
+    text: "Admin ramah dan gercep banget. Gak nyampe 10 menit beres!"
+  }
+];
+
+const extendedTestimonials = [...testimonials, ...testimonials];
+---
+
+<section class="py-24 bg-gray-50 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">Kata Mereka Yang Sudah Lapor</h2>
+    
+    <div class="relative">
+      <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none hidden md:block"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none hidden md:block"></div>
+      
+      <div class="animate-marquee">
+        {extendedTestimonials.map((t, i) => (
+          <div class="w-[300px] md:w-[400px] bg-white p-8 rounded-3xl shadow-sm border border-gray-100 mx-4 flex flex-col justify-between shrink-0">
+            <div>
+              <div class="flex gap-1 mb-4">
+                {[...Array(5)].map((_, idx) => (
+                  <Star size={16} fill="#FF6B00" className="text-[#FF6B00]" />
+                ))}
+              </div>
+              <p class="text-gray-700 italic mb-6 text-base md:text-lg leading-relaxed">"{t.text}"</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 md:w-12 md:h-12 bg-orange-100 rounded-full flex items-center justify-center font-bold text-[#FF6B00] shrink-0">
+                {t.name.charAt(0)}
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 text-sm md:text-base">{t.name}</h4>
+                <p class="text-xs md:text-sm text-gray-500">{t.city}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

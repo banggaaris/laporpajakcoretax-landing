@@ -1,0 +1,141 @@
+---
+import { Coffee, Timer, Zap, CheckCircle, MessageCircle, ShieldCheck, Sparkles } from 'lucide-react';
+
+const plans = [
+  {
+    name: "Paket Hemat",
+    price: "50.000",
+    original: "100.000",
+    duration: "7 Hari Kelar",
+    desc: "Cocok untuk Anda yang santai dan ingin harga paling ekonomis.",
+    icon: "coffee",
+    highlight: false,
+    color: "bg-gray-50"
+  },
+  {
+    name: "Paket Reguler",
+    price: "150.000",
+    original: "300.000",
+    duration: "2 Hari Selesai",
+    desc: "Pilihan paling populer bagi yang butuh kepastian waktu.",
+    icon: "timer",
+    highlight: true,
+    color: "bg-gray-900"
+  },
+  {
+    name: "Paket Kilat",
+    price: "250.000",
+    original: "500.000",
+    duration: "1 Hari Selesai",
+    desc: "Layanan prioritas tinggi untuk Anda yang sedang terburu-buru.",
+    icon: "zap",
+    highlight: false,
+    color: "bg-gray-50"
+  }
+];
+
+const features = [
+  "Review dokumen lengkap",
+  "Input sistem Coretax",
+  "Pengiriman BPE Resmi",
+  "Konsultasi WhatsApp",
+];
+---
+
+<section id="pricing" class="py-24 bg-white relative overflow-hidden">
+  <!-- Background patterns -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none opacity-5">
+    <div class="w-full h-full" style="background-image: radial-gradient(#FF6B00 1px, transparent 1px); background-size: 40px 40px;"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">Pilih Paket Lapor Anda</h2>
+      <p class="text-gray-500 max-w-2xl mx-auto">Semua harga sudah termasuk diskon promo terbatas. Pilih durasi yang paling sesuai dengan kebutuhan Anda.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      {plans.map((plan, i) => (
+        <div 
+          class:list={[
+            "group relative p-8 rounded-[2.5rem] flex flex-col transition-all duration-500 hover:-translate-y-4",
+            plan.highlight 
+              ? `${plan.color} text-white shadow-2xl scale-105 z-20 border-4 border-[#FF6B00] glow-popular` 
+              : `${plan.color} text-gray-900 border border-gray-100 hover:shadow-2xl hover:border-orange-200`
+          ]}
+        >
+          {plan.highlight && (
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-[#FF6B00] text-white px-8 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-xl flex items-center gap-2 overflow-hidden">
+              <div class="absolute inset-0 shimmer-effect pointer-events-none"></div>
+              <Sparkles size={14} className="animate-pulse" />
+              <span>Paling Populer</span>
+            </div>
+          )}
+
+          <div class="mb-6 flex items-center justify-between">
+            <div class:list={["p-4 rounded-2xl transition-transform duration-500 group-hover:rotate-12", plan.highlight ? 'bg-orange-500/20' : 'bg-orange-100']}>
+              {plan.icon === 'coffee' && <Coffee className="text-[#FF6B00] w-7 h-7" />}
+              {plan.icon === 'timer' && <Timer className="text-[#FF6B00] w-7 h-7" />}
+              {plan.icon === 'zap' && <Zap className="text-[#FF6B00] w-7 h-7" />}
+            </div>
+            <div class="text-right">
+               <p class:list={["text-[10px] font-black uppercase tracking-widest", plan.highlight ? 'text-gray-400' : 'text-gray-400']}>Estimasi</p>
+               <p class="font-extrabold text-sm">{plan.duration}</p>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-black mb-2 tracking-tight">{plan.name}</h3>
+          <p class:list={["text-sm mb-8 leading-relaxed", plan.highlight ? 'text-gray-400' : 'text-gray-500']}>{plan.desc}</p>
+
+          <div class="mb-8 p-4 rounded-3xl bg-opacity-10 bg-white border border-transparent group-hover:border-orange-500/20 transition-all">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-sm line-through text-gray-500 font-medium">Rp {plan.original}</span>
+              <span class:list={["text-[10px] font-black px-2 py-1 rounded-lg uppercase tracking-wider", plan.highlight ? 'bg-[#FF6B00] text-white' : 'bg-red-100 text-red-600']}>
+                Hemat 50%
+              </span>
+            </div>
+            <div class="flex items-baseline gap-1">
+              <span class="text-2xl font-black">Rp</span>
+              <span class="text-5xl font-black text-[#FF6B00] transition-transform duration-500 group-hover:scale-110 origin-left">{plan.price}</span>
+            </div>
+          </div>
+
+          <div class="space-y-4 mb-10 flex-grow">
+            {features.map((item, idx) => (
+              <div class="flex items-center gap-3 text-sm font-medium">
+                <div class="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
+                  <CheckCircle className="text-green-500" size={14} />
+                </div>
+                <span class:list={[plan.highlight ? 'text-gray-300' : 'text-gray-600']}>{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <a 
+            href={`https://wa.me/628123456789?text=Halo%20LaporPajakCoreTax,%20saya%20ingin%20ambil%20${encodeURIComponent(plan.name)}%20seharga%20Rp%20${plan.price}.`}
+            class:list={[
+              "group/btn relative overflow-hidden block w-full py-5 rounded-2xl font-black text-center transition-all duration-300",
+              plan.highlight 
+                ? 'bg-[#FF6B00] text-white hover:bg-[#e66000] shadow-xl shadow-orange-900/40' 
+                : 'bg-white text-gray-900 border-2 border-gray-200 hover:border-[#FF6B00] hover:text-[#FF6B00] shadow-sm'
+            ]}
+          >
+            <div class="relative z-10 flex items-center justify-center gap-2">
+              <span>Pilih Paket Ini</span>
+              <MessageCircle size={18} className="transition-transform group-hover/btn:translate-x-1" />
+            </div>
+            {plan.highlight && <div class="absolute inset-0 shimmer-effect pointer-events-none opacity-50"></div>}
+          </a>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-16 text-center">
+       <div class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-orange-50 text-orange-700 text-sm font-bold border border-orange-100 animate-float-slow">
+          <ShieldCheck size={18} />
+          <span>Semua paket memiliki Garansi 100% Uang Kembali</span>
+       </div>
+       <p class="mt-6 text-xs text-gray-400">*Estimasi waktu dihitung setelah dokumen lengkap diterima tim ahli kami.</p>
+    </div>
+  </div>
+</section>

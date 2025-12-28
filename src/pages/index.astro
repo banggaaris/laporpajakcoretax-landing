@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Static Astro Components
+import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
+import Features from '../components/Features.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Pricing from '../components/Pricing.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+
+// Interactive React Components (Islands)
+import Navbar from '../components/react/Navbar';
+import Stats from '../components/react/Stats';
+import FAQ from '../components/react/FAQ';
+---
+
+<Layout>
+  <!-- Navbar - loads immediately for navigation -->
+  <Navbar client:load />
+  
+  <!-- Static sections - no JavaScript -->
+  <Hero />
+  <TrustBar />
+  <Features />
+  
+  <!-- Stats - hydrates when visible for counter animation -->
+  <Stats client:visible />
+  
+  <!-- Static sections - no JavaScript -->
+  <Testimonials />
+  <Pricing />
+  
+  <!-- FAQ - hydrates when visible for accordion interaction -->
+  <FAQ client:visible />
+  
+  <!-- Static sections - no JavaScript -->
+  <Footer />
+  <FloatingWhatsApp />
+</Layout>
