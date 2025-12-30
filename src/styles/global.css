@@ -30,8 +30,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0px rgba(255, 107, 0, 0); }
-  50% { box-shadow: 0 0 20px rgba(255, 107, 0, 0.4); }
+  0%, 100% { box-shadow: 0 0 0px rgba(33, 44, 95, 0); }
+  50% { box-shadow: 0 0 20px rgba(33, 44, 95, 0.4); }
 }
 
 /* Animation Classes */
@@ -39,8 +39,8 @@
   position: absolute;
   height: 2px;
   width: 100%;
-  background: #FF6B00;
-  box-shadow: 0 0 10px #FF6B00;
+  background: #212C5F;
+  box-shadow: 0 0 10px #212C5F;
   animation: scan 2s linear infinite;
 }
 
@@ -74,5 +74,5 @@
 
 /* Selection Color */
 ::selection {
-  background-color: rgba(255, 107, 0, 0.3);
+  background-color: rgba(33, 44, 95, 0.3);
 }

@@ -35,7 +35,7 @@ export default function FAQ() {
                                 className="w-full p-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
                             >
                                 <span className="font-bold text-gray-900">{faq.q}</span>
-                                {openIndex === i ? <ChevronUp className="text-[#FF6B00]" /> : <ChevronDown className="text-gray-400" />}
+                                {openIndex === i ? <ChevronUp className="text-[#212C5F]" /> : <ChevronDown className="text-gray-400" />}
                             </button>
                             {openIndex === i && (
                                 <div className="px-6 pb-6 text-gray-600 leading-relaxed text-sm">

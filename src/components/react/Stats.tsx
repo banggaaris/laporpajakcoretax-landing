@@ -15,20 +15,20 @@ export default function Stats() {
     }, []);
 
     return (
-        <section className="py-20 bg-[#FF6B00]">
+        <section className="py-20 bg-[#212C5F]">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center text-white">
                     <div>
                         <div className="text-5xl font-extrabold mb-2">{counts.spt.toLocaleString()}+</div>
-                        <div className="text-orange-100 font-medium uppercase tracking-wider">SPT Berhasil Dilaporkan</div>
+                        <div className="text-indigo-200 font-medium uppercase tracking-wider">SPT Berhasil Dilaporkan</div>
                     </div>
                     <div>
                         <div className="text-5xl font-extrabold mb-2">{counts.rating}/5</div>
-                        <div className="text-orange-100 font-medium uppercase tracking-wider">Rating Kepuasan Pelanggan</div>
+                        <div className="text-indigo-200 font-medium uppercase tracking-wider">Rating Kepuasan Pelanggan</div>
                     </div>
                     <div>
                         <div className="text-5xl font-extrabold mb-2">{counts.guarantee}%</div>
-                        <div className="text-orange-100 font-medium uppercase tracking-wider">Garansi Uang Kembali</div>
+                        <div className="text-indigo-200 font-medium uppercase tracking-wider">Garansi Uang Kembali</div>
                     </div>
                 </div>
             </div>

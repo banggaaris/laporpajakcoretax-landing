@@ -13,27 +13,27 @@ import { Clock, Lock, History, Wallet, MessageCircle } from 'lucide-react';
     <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 auto-rows-[240px]">
       
       <!-- Card 1: Proses Ekspres (Large) -->
-      <div class="md:col-span-2 md:row-span-1 bg-orange-50 rounded-3xl p-8 border border-orange-100 relative overflow-hidden group">
+      <div class="md:col-span-2 md:row-span-1 bg-indigo-50 rounded-3xl p-8 border border-indigo-100 relative overflow-hidden group">
         <div class="relative z-10 flex flex-col h-full justify-between">
           <div>
             <h3 class="text-2xl font-bold text-gray-900 mb-2">Proses Ekspres</h3>
             <p class="text-gray-600 max-w-sm">Selesai dalam hitungan menit. Tim kami bekerja secara paralel untuk kecepatan maksimal.</p>
           </div>
-          <div class="w-full bg-white h-4 rounded-full overflow-hidden border border-orange-200 mt-6 relative">
-             <div class="bg-[#FF6B00] h-full rounded-full animate-fill shadow-[0_0_15px_rgba(255,107,0,0.5)]"></div>
+          <div class="w-full bg-white h-4 rounded-full overflow-hidden border border-indigo-200 mt-6 relative">
+             <div class="bg-[#212C5F] h-full rounded-full animate-fill shadow-[0_0_15px_rgba(33,44,95,0.5)]"></div>
           </div>
         </div>
-        <Clock className="absolute -right-4 -bottom-4 w-32 h-32 text-orange-200 opacity-20 transform -rotate-12 group-hover:rotate-0 transition-transform duration-700" />
+        <Clock className="absolute -right-4 -bottom-4 w-32 h-32 text-indigo-200 opacity-20 transform -rotate-12 group-hover:rotate-0 transition-transform duration-700" />
       </div>
 
       <!-- Card 2: Privasi (Small) -->
       <div class="bg-gray-900 rounded-3xl p-8 text-white relative overflow-hidden flex flex-col justify-between group">
         <div class="relative z-10">
-          <Lock className="w-10 h-10 text-[#FF6B00] mb-4" />
+          <Lock className="w-10 h-10 text-[#212C5F] mb-4" />
           <h3 class="text-xl font-bold mb-2">Privasi Terjamin</h3>
           <p class="text-gray-400 text-sm">Enkripsi 256-bit standar perbankan.</p>
         </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#FF6B00]/10 to-transparent pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#212C5F]/10 to-transparent pointer-events-none"></div>
         <div class="animate-scan"></div>
       </div>
 
@@ -48,8 +48,8 @@ import { Clock, Lock, History, Wallet, MessageCircle } from 'lucide-react';
 
       <!-- Card 4: Harga (Small) -->
       <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm flex flex-col items-center justify-center text-center group hover:shadow-lg transition-all">
-         <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mb-4 animate-float-slow">
-            <Wallet className="w-10 h-10 text-[#FF6B00]" />
+         <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mb-4 animate-float-slow">
+            <Wallet className="w-10 h-10 text-[#212C5F]" />
          </div>
          <h3 class="text-xl font-bold mb-2">Harga Kaki Lima</h3>
          <p class="text-gray-500 text-sm italic">Cuma Rp15.000, hemat waktu berjam-jam.</p>
