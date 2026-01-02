@@ -34,7 +34,7 @@ const extendedTestimonials = [...testimonials, ...testimonials];
 
 <section class="py-24 bg-gray-50 overflow-hidden">
   <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">Kata Mereka Yang Sudah Lapor</h2>
+    <h2 class="text-2xl font-bold text-center mb-16 text-gray-900">Kata Mereka Yang Sudah Lapor</h2>
     
     <div class="relative">
       <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none hidden md:block"></div>
@@ -46,13 +46,13 @@ const extendedTestimonials = [...testimonials, ...testimonials];
             <div>
               <div class="flex gap-1 mb-4">
                 {[...Array(5)].map((_, idx) => (
-                  <Star size={16} fill="#212C5F" className="text-[#212C5F]" />
+                  <Star size={16} fill="#FF6B00" className="text-[#FF6B00]" />
                 ))}
               </div>
-              <p class="text-gray-700 italic mb-6 text-base md:text-lg leading-relaxed">"{t.text}"</p>
+              <p class="text-gray-700 italic mb-6 text-sm md:text-base leading-relaxed">"{t.text}"</p>
             </div>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 md:w-12 md:h-12 bg-indigo-100 rounded-full flex items-center justify-center font-bold text-[#212C5F] shrink-0">
+              <div class="w-10 h-10 md:w-12 md:h-12 bg-orange-100 rounded-full flex items-center justify-center font-bold text-[#FF6B00] shrink-0">
                 {t.name.charAt(0)}
               </div>
               <div>

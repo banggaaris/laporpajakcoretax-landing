@@ -26,7 +26,7 @@ export default function FAQ() {
     return (
         <section id="faq" className="py-24 bg-gray-50">
             <div className="max-w-3xl mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Pertanyaan Umum</h2>
+                <h2 className="text-2xl font-bold text-center mb-12 text-gray-900">Pertanyaan Umum</h2>
                 <div className="space-y-4">
                     {faqs.map((faq, i) => (
                         <div key={i} className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm transition-all hover:shadow-md">
@@ -35,7 +35,7 @@ export default function FAQ() {
                                 className="w-full p-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
                             >
                                 <span className="font-bold text-gray-900">{faq.q}</span>
-                                {openIndex === i ? <ChevronUp className="text-[#212C5F]" /> : <ChevronDown className="text-gray-400" />}
+                                {openIndex === i ? <ChevronUp className="text-[#FF6B00]" /> : <ChevronDown className="text-gray-400" />}
                             </button>
                             {openIndex === i && (
                                 <div className="px-6 pb-6 text-gray-600 leading-relaxed text-sm">
